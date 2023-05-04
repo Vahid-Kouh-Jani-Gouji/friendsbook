@@ -1,0 +1,10 @@
+{
+  "resourceName": "myfriendsdb",
+  "tableName": "myfriendsbook",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

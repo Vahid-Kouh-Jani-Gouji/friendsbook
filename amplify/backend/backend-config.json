@@ -1,0 +1,42 @@
+{
+  "api": {
+    "friendsbookapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "friendsbookfunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "friendsbookfunction": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_friendsbookfunction_friendsdb": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "friendsbookfunction"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "myfriendsdb": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
